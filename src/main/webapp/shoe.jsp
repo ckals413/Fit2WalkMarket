@@ -7,6 +7,17 @@
  <link href = "./resources/css/bootstrap.min.css" rel="stylesheet">
 
 <title>신발 정보</title>
+<script type="text/javascript">
+	function addToCart() {
+		if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
+			document.addForm.submit();
+		} else {		
+			document.addForm.reset();
+		}
+	}
+</script>
+
+
 </head>
 <body>
 <div class="container py-4">
@@ -38,8 +49,12 @@
 				<p><b>분류</b> : <%=shoes.getCategory()%>
 				<p><b>재고수</b> : <%=shoes.getUnitsInStock()%>
 				<h4><%=shoes.getUnitPrice()%>원</h4>
-				<p><a href="#" class="btn btn-info"> 신발주문 &raquo;</a> 
+				
+				<p><form name="addForm" action="./addCart.jsp?id=<%=shoes.getProductId()%>" method="post"><a href="#" class="btn btn-info" onclick="addToCart()"> 신발주문 &raquo;</a> 
+				    <a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a>		
+				
 					<a href="./shoes.jsp" class="btn btn-secondary"> 신발목록 &raquo;</a>
+					</form>
 			</div>
 		</div>
 	<jsp:include page="footer.jsp" />
