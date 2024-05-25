@@ -43,8 +43,8 @@ function CheckAddShoes() {
 		return false;
 	}
 	
-	if (description.value.length < 80) {
-		alert("[상세설명]\n최소 100자이상 입력하세요");
+	if (description.value.length < 30) {
+		alert("[상세설명]\n최소 30자이상 입력하세요");
 		//description.select();
 		description.focus();
 		return false;
