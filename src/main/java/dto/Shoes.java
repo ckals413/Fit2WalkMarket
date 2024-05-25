@@ -19,7 +19,7 @@ public class Shoes implements Serializable {
 	private String filename;	//이미지 
 	private int quantity;			//장바구니에 담은 개수
 	
-
+	
 	public Shoes() {
 		super();
 }
