@@ -26,7 +26,7 @@ public class ShoesRepository{
 		shoes1.setReleaseDate("2023/04/01");
 		shoes1.setCondition("New");
 		shoes1.setColor("Black");
-		shoes1.setFilename("ISBN1234.jpg");
+		shoes1.setFilename("shoes9.png");
 
 		
 		
@@ -38,7 +38,7 @@ public class ShoesRepository{
 		shoes2.setReleaseDate("2023/05/15");
 		shoes2.setCondition("New");
 		shoes2.setColor("White");
-		shoes2.setFilename("ISBN1234.jpg");
+		shoes2.setFilename("shoes4.png");
 		
 		
 		Shoes shoes3 = new Shoes("SKU1236", "HOKA bondi8", 190000);
@@ -49,7 +49,7 @@ public class ShoesRepository{
 		shoes3.setReleaseDate("2023/08/11");
 		shoes3.setCondition("New");
 		shoes3.setColor("White");
-		shoes3.setFilename("ISBN1234.jpg");
+		shoes3.setFilename("shoes5.png");
 		
 		Shoes shoes4 = new Shoes("SKU1121", "New Balance 574", 130000);
 		shoes4.setBrand("New Balance");
@@ -59,7 +59,7 @@ public class ShoesRepository{
 		shoes4.setReleaseDate("2023/06/01");
 		shoes4.setCondition("New");
 		shoes4.setColor("Gray");
-		shoes4.setFilename("ISBN1234.jpg");
+		shoes4.setFilename("shoes6.png");
 
 		Shoes shoes5 = new Shoes("SKU3141", "Reebok Nano X1", 140000);
 		shoes5.setBrand("Reebok");
@@ -69,7 +69,7 @@ public class ShoesRepository{
 		shoes5.setReleaseDate("2023/07/20");
 		shoes5.setCondition("New");
 		shoes5.setColor("Blue");
-		shoes5.setFilename("ISBN1234.jpg");
+		shoes5.setFilename("shoes7.png");
 		
 		Shoes shoes6 = new Shoes("SKU6789", "Under Armour HOVR Phantom", 170000);
 		shoes6.setBrand("Under Armour");
@@ -79,7 +79,7 @@ public class ShoesRepository{
 		shoes6.setReleaseDate("2023/08/10");
 		shoes6.setCondition("New");
 		shoes6.setColor("Green");
-		shoes6.setFilename("ISBN1234.jpg");
+		shoes6.setFilename("shoes8.png");
 		
 		Shoes shoes7 = new Shoes("SKU1011", "Asics Gel-Kayano 27", 155000);
 		shoes7.setBrand("Asics");
@@ -89,7 +89,7 @@ public class ShoesRepository{
 		shoes7.setReleaseDate("2023/09/15");
 		shoes7.setCondition("New");
 		shoes7.setColor("Yellow");
-		shoes7.setFilename("ISBN1234.jpg");
+		shoes7.setFilename("shoes1.png");
 		
 		Shoes shoes8 = new Shoes("SKU1213", "Converse Chuck Taylor", 85000);
 		shoes8.setBrand("Converse");
@@ -99,7 +99,7 @@ public class ShoesRepository{
 		shoes8.setReleaseDate("2023/10/05");
 		shoes8.setCondition("New");
 		shoes8.setColor("Blue");
-		shoes8.setFilename("ISBN1234.jpg");
+		shoes8.setFilename("shoes10.png");
 		
 		Shoes shoes9 = new Shoes("SKU1415", "Vans Old Skool", 95000);
 		shoes9.setBrand("Vans");
@@ -109,7 +109,7 @@ public class ShoesRepository{
 		shoes9.setReleaseDate("2023/11/20");
 		shoes9.setCondition("New");
 		shoes9.setColor("Black");
-		shoes9.setFilename("ISBN1234.jpg");
+		shoes9.setFilename("shoes11.png");
 
 		Shoes shoes10 = new Shoes("SKU1617", "Brooks Ghost 14", 145000);
 		shoes10.setBrand("Brooks");
@@ -119,7 +119,7 @@ public class ShoesRepository{
 		shoes10.setReleaseDate("2023/12/01");
 		shoes10.setCondition("New");
 		shoes10.setColor("White");
-		shoes10.setFilename("ISBN1234.jpg");
+		shoes10.setFilename("shoes12.png");
 		
 		
 		listOfShoes.add(shoes1);

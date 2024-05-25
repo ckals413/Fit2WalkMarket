@@ -37,7 +37,7 @@
     %>
         <div class="col-md-4">
             <div class="h-100 p-2">	
-       			<img src="./resources/images/<%=shoes.getFilename()%>" style="width: 250; height:350" />		    
+       			<img src="./resources/images/<%=shoes.getFilename()%>" style="width: 250; height:250" />		    
             <h5><b><%=shoes.getName()%></b></h5>
             <p><%=shoes.getBrand()%>
             <br> <%=shoes.getColor()%> | <%=shoes.getUnitPrice()%>원

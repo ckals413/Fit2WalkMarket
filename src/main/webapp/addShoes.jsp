@@ -91,9 +91,9 @@
 				</div>				
 			</div>
 			<div class="mb-3 row">
-				<label class="col-sm-2">이미지</label>
+				<label class="col-sm-2"><fmt:message key="productImage" /></label>
 				<div class="col-sm-5">
-					<label class="col-sm-2"><fmt:message key="productImage" /></label>
+					<input type="file" name="shoesImage" class="form-control">
 				</div>
 			</div>
 					
