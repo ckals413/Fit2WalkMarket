@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="dto.Shoes"%>
-<%@ page import="dao.ShoesRepository"%>
+
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.*"%>
+<%@ include file="dbconn.jsp" %>
 
 <%
 request.setCharacterEncoding("UTF-8");
@@ -48,22 +48,27 @@ request.setCharacterEncoding("UTF-8");
 	else
 		stock = Long.valueOf(unitsInStock);
 	
-	ShoesRepository dao = ShoesRepository.getInstance();
-
-	Shoes newShoes = new Shoes();
-	newShoes.setProductId(productId);
-	newShoes.setName(name);
-	newShoes.setUnitPrice(price);
-	newShoes.setBrand(brand);
-	newShoes.setColor(color);
-	newShoes.setReleaseDate(releaseDate);
-	newShoes.setDescription(description);
-	newShoes.setCategory(category);
-	newShoes.setUnitsInStock(stock);
-	newShoes.setCondition(condition);
-	newShoes.setFilename(fileName);
-
-	dao.addShoes(newShoes);
+	PreparedStatement pstmt = null;	
+	
+	String sql = "insert into shoes values(?,?,?,?,?,?,?,?,?,?,?)";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, productId);
+	pstmt.setString(2, name);
+	pstmt.setInt(3, price);
+	pstmt.setString(4, brand);
+	pstmt.setString(5, description);
+	pstmt.setString(6, color);
+	pstmt.setString(7, category);
+	pstmt.setLong(8, stock);
+	pstmt.setString(9, releaseDate);	
+	pstmt.setString(10, condition);
+	pstmt.setString(11, fileName);
+	pstmt.executeUpdate();
+	
+	if (pstmt != null)
+		pstmt.close();
+	if (conn != null)
+		conn.close();
 
 	response.sendRedirect("shoes.jsp");
 %>

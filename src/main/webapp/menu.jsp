@@ -7,13 +7,25 @@
         <span class="fs-4">Home</span>
       </a>    
 </header>     -->
+<%@ page contentType="text/html; charset=utf-8"%>
 
 <!-- 3줄 메뉴모양(변경) -->
 <header class="pb-3 mb-4 border-bottom">
-  <a href="./welcome.jsp" class="d-flex align-items-center text-dark text-decoration-none">
+  <div class="container ">  
+   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">  
+      <a href="./welcome.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
     <svg width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z"/>
     </svg>   
     <span class="fs-4">Menu</span>
-  </a>    
+     </a> 
+
+       <ul class="nav nav-pills">
+         <li class="nav-item"><a href="./shoes.jsp" class="nav-link" >신발 목록</a></li>
+         <li class ="nav-item"><a href = "./addShoes.jsp" class = "nav-link"  >신발 등록</a></li>
+         <li class ="nav-item"><a href = "./editShoes.jsp?edit=update" class = "nav-link"  >신발 수정</a></li>
+          <li class ="nav-item"><a href = "./editShoes.jsp?edit=delete" class = "nav-link"  >신발 삭제</a></li>
+       </ul> 
+    </div>
+  </div>   
 </header>

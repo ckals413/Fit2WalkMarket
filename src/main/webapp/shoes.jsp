@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="dto.Shoes"%>
-<%@ page import="dao.ShoesRepository"%>
+<%@ page import="java.sql.*"%>
+
 <html>
 <head>
  <link href = "./resources/css/bootstrap.min.css" rel="stylesheet">
@@ -25,31 +24,37 @@
         <p class="col-md-8 fs-4">ShoeList</p>      
       </div>
     </div>
-   <%
-   ShoesRepository dao = ShoesRepository.getInstance();
-   ArrayList<Shoes> listOfShoes = dao.getAllShoes();
-   %>   
+  <%@ include file="dbconn.jsp" %> 
       
     <div class="row align-items-md-stretch text-center">       
     <%
-       for (int i = 0; i < listOfShoes.size(); i++) {
-          Shoes shoes = listOfShoes.get(i);
+    	PreparedStatement pstmt = null;
+			ResultSet rs = null;
+	
+			String sql = "select * from shoes";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
     %>
         <div class="col-md-4">
             <div class="h-100 p-2">	
-       			<img src="./resources/images/<%=shoes.getFilename()%>" style="width: 250; height:250" />		    
-            <h5><b><%=shoes.getName()%></b></h5>
-            <p><%=shoes.getBrand()%>
-            <br> <%=shoes.getColor()%> | <%=shoes.getUnitPrice()%>원
-            <p> <%=shoes.getDescription().substring(0,25)%>...
-            <p><%=shoes.getUnitPrice()%>원
-            
-            <!--사용자 정의 CSS -->
-            <p><a href="./shoe.jsp?id=<%=shoes.getProductId()%>" class="btn custom-btn" role="button"> 상세 정보 &raquo;</a>
-         </div>   
+       			<img src="./resources/images/<%=rs.getString("b_filename")%>" style="width: 250; height:250" />		
+				<h5><b><%=rs.getString("b_name")%></b></h5>
+				<p><%=rs.getString("b_brand")%>
+				<br> <%=rs.getString("b_color")%> | <%=rs.getString("b_unitPrice")%>원
+				<p> <%=rs.getString("b_description").substring(0,20)%>....
+				<p><%=rs.getString("b_unitPrice")%>원
+				<p><a href="./shoe.jsp?id=<%=rs.getString("b_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>	
+			</div>	
       </div>         
     <%
       }
+			if (rs != null) 
+				rs.close();
+			if (pstmt != null)
+				pstmt.close();
+			if (conn != null)
+				conn.close();	
     %>   
     </div>   
     <%@ include file="footer.jsp"%>   
